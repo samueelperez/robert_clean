@@ -1,0 +1,1207 @@
+/* Estilos para la página de Portfolio */
+.portfolio-page {
+  padding: 1rem 0;
+}
+
+.portfolio-page h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Layout para la pestaña de resumen */
+.portfolio-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+
+/* Resumen del Portfolio */
+.portfolio-summary {
+  background-color: var(--card-bg);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.portfolio-summary h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.summary-title {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.summary-value.positive {
+  color: var(--success-color);
+}
+
+.summary-value.negative {
+  color: var(--danger-color);
+}
+
+.summary-percentage {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.summary-percentage.positive {
+  color: var(--success-color);
+}
+
+.summary-percentage.negative {
+  color: var(--danger-color);
+}
+
+/* Distribución del Portfolio */
+.portfolio-distribution {
+  background-color: var(--card-bg);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.portfolio-distribution h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.distribution-list {
+  margin-top: 1.5rem;
+}
+
+.distribution-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.distribution-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+}
+
+.distribution-name {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.distribution-value {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Lista de Activos */
+.asset-list {
+  background-color: var(--card-bg);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.asset-list h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.assets-table-container {
+  overflow-x: auto;
+}
+
+/* ===== REDISEÑO MODERNO DE LA SECCIÓN DE ACTIVOS (SIN ÚLTIMA ACTUALIZACIÓN) ===== */
+
+/* Contenedor principal de activos */
+.exchange-assets {
+  position: relative;
+  margin-top: 2rem;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Tabla de activos con diseño minimalista */
+.assets-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Encabezados con diseño minimalista */
+.assets-table thead {
+  position: relative;
+  background-color: var(--primary-color);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.assets-table th {
+  position: sticky;
+  top: 0;
+  padding: 1.5rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background-color: transparent;
+  border: none;
+  z-index: 10;
+}
+
+/* Ocultar completamente la columna de última actualización */
+.assets-table th:nth-child(5),
+.assets-table td:nth-child(5) {
+  display: none;
+}
+
+/* Ajustar anchos de columnas para 4 columnas (sin última actualización) */
+.assets-table th:nth-child(1) { width: 40%; } /* Activo */
+.assets-table th:nth-child(2) { width: 20%; } /* Cantidad */
+.assets-table th:nth-child(3) { width: 20%; } /* Precio */
+.assets-table th:nth-child(4) { width: 20%; } /* Valor */
+/* La columna de acciones ahora es la 5ta en lugar de la 6ta */
+.assets-table th:nth-child(6),
+.assets-table td:nth-child(6) {
+  width: 15%; /* Acciones */
+}
+
+/* Filas de la tabla */
+.assets-table tbody tr {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.assets-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Celdas con diseño moderno */
+.assets-table td {
+  padding: 1.5rem;
+  color: #1e293b;
+}
+
+/* Columna de activo */
+.assets-table td:first-child {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Icono de criptomoneda */
+.asset-symbol {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1.1rem;
+}
+
+.asset-symbol::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #3b82f6 0deg,
+    #8b5cf6 90deg,
+    #ec4899 180deg,
+    #ef4444 270deg,
+    #3b82f6 360deg
+  );
+  margin-right: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.asset-full-name {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* Columnas numéricas con tipografía monoespaciada y alineación */
+.assets-table td:nth-child(2),
+.assets-table td:nth-child(3),
+.assets-table td:nth-child(4) {
+  font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+  text-align: right;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+/* Cantidad */
+.assets-table td:nth-child(2) {
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Precio */
+.assets-table td:nth-child(3) {
+  color: #0ea5e9;
+  font-weight: 700;
+}
+
+/* Valor */
+.assets-table td:nth-child(4) {
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* Botones de acción */
+.asset-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.edit-button, 
+.remove-button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: #f8fafc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.edit-button {
+  color: #3b82f6;
+}
+
+.remove-button {
+  color: #ef4444;
+}
+
+/* Estado vacío */
+.no-assets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.no-assets::before {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+  .exchange-assets {
+    border-radius: 12px;
+  }
+  
+  .assets-table th,
+  .assets-table td {
+    padding: 1rem;
+  }
+  
+  .asset-symbol::before {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.75rem;
+  }
+  
+  .edit-button, 
+  .remove-button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Formulario de Activos */
+.asset-form {
+  background-color: var(--card-bg);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.asset-form h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.form-group input.error,
+.form-group select.error {
+  border-color: var(--danger-color);
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.btn-submit {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilos generales de la página */
+.portfolio-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.portfolio-header h1 {
+  color: #334155;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.add-exchange-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-exchange-button:hover {
+  background-color: #1d4ed8;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  border-left: 4px solid #ef4444;
+  color: #b91c1c;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+}
+
+/* Estilos del resumen del portfolio */
+.portfolio-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.summary-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.card-icon {
+  background-color: #eff6ff;
+  color: #2563eb;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.card-content h3 {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.card-content .value {
+  color: #334155;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.total-value .card-icon {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.refresh-button {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  border-radius: 10px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.refresh-button:hover {
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+.refresh-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos del contenido principal */
+.portfolio-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.portfolio-content h2 {
+  color: #334155;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+}
+
+/* Estilos de la lista de exchanges */
+.exchange-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.empty-state {
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  color: #64748b;
+}
+
+.exchange-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.exchange-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.exchange-header:hover {
+  background-color: #f8fafc;
+}
+
+.exchange-info h3 {
+  color: #334155;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.exchange-value {
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+.exchange-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.add-asset-button, .remove-exchange-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.add-asset-button {
+  color: #2563eb;
+}
+
+.add-asset-button:hover {
+  background-color: #eff6ff;
+}
+
+.remove-exchange-button {
+  color: #ef4444;
+}
+
+.remove-exchange-button:hover {
+  background-color: #fee2e2;
+}
+
+.no-assets {
+  color: #94a3b8;
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
+}
+
+.asset-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.asset-symbol {
+  font-weight: 600;
+  color: #334155;
+}
+
+.asset-full-name {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.edit-amount-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+}
+
+.save-button, .cancel-button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.save-button {
+  background-color: #2563eb;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+/* Estilos de la distribución del portfolio */
+.distribution-section {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.chart-container {
+  height: 300px;
+  position: relative;
+}
+
+.empty-distribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
+  background-color: #f8fafc;
+  border-radius: 8px;
+}
+
+/* Estilos de los formularios modales */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.add-exchange-form, .add-asset-form {
+  padding: 1.5rem;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-header h3 {
+  color: #334155;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: #334155;
+}
+
+.form-error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  color: #334155;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.submit-button, .form-actions .cancel-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button {
+  background-color: #2563eb;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #1d4ed8;
+}
+
+.form-actions .cancel-button {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+.form-actions .cancel-button:hover {
+  background-color: #cbd5e1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .portfolio-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .portfolio-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-summary {
+    grid-template-columns: 1fr;
+  }
+  
+  .exchange-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .exchange-actions {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .assets-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Estilos para la información de precio actual */
+.current-price-info {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price-value {
+  font-weight: 600;
+  color: #0ea5e9;
+}
+
+.symbol-input-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.get-price-btn {
+  padding: 0.5rem 1rem;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.get-price-btn:hover {
+  background-color: #0284c7;
+}
+
+.get-price-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Mejora para la columna de precio */
+.assets-table td:nth-child(3) {
+  color: #0ea5e9;
+  font-family: 'Roboto Mono', monospace, sans-serif;
+  font-weight: 500;
+}
+
+/* Mejora para la columna de valor */
+.assets-table td:nth-child(4) {
+  font-weight: 600;
+  font-family: 'Roboto Mono', monospace, sans-serif;
+}
+
+/* Nuevos estilos para el grid de tarjetas de assets */
+.assets-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.exchange-assets-container {
+  padding: 1.5rem;
+  background-color: #f8fafc;
+  border-radius: 0 0 12px 12px;
+}
+
+.assets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.assets-header h4 {
+  font-size: 1.2rem;
+  color: #334155;
+  margin: 0;
+}
+
+.filter-select {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.asset-card.exchange-asset {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.asset-card.exchange-asset:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.asset-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.asset-symbol-container {
+  display: flex;
+  align-items: center;
+}
+
+.asset-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
+}
+
+.asset-name-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.asset-symbol-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}
+
+.asset-full-name {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0.25rem 0 0 0;
+}
+
+.asset-card-actions {
+  display: flex;
+}
+
+.remove-asset-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f8fafc;
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.remove-asset-button:hover {
+  background-color: #fee2e2;
+}
+
+.asset-card-content {
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.asset-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.info-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #334155;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.info-value.price {
+  color: #0ea5e9;
+}
+
+.info-value.total {
+  color: #10b981;
+}
+
+.info-value.amount.editable {
+  cursor: pointer;
+  padding: 0.375rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.info-value.amount.editable:hover {
+  background-color: #f1f5f9;
+}
+
+.asset-card-footer {
+  padding: 0.75rem 1.25rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+}
+
+.last-updated-text {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.empty-assets-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.add-first-asset-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-first-asset-button:hover {
+  background-color: #2563eb;
+}
+
+/* Mejoras para los logos de criptomonedas */
+.crypto-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: white;
+  padding: 2px;
+}
+
+.crypto-generic-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 50%;
+}
+
+.generic-coin-icon {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.crypto-logo-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  border-top-color: #3b82f6;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Asegúrate de que el contenedor del icono tenga position: relative */
+.asset-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  overflow: hidden;
+} 
